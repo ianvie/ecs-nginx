@@ -1,0 +1,54 @@
+{
+  "containerDefinitions": [
+    {
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/ecs-encryption-1",
+          "awslogs-region": "eu-west-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "image": "<NGINX reverse proxy image URL here>",
+      "name": "nginx",
+      "memory": "256",
+      "cpu": "256",
+      "essential": true,
+      "links": [
+        "app"
+      ]
+    },
+    {
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/ecs-encryption-1",
+          "awslogs-region": "eu-west-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "image": "<app image URL here>",
+      "name": "app",
+      "memory": "256",
+      "cpu": "256",
+      "essential": true
+
+    }
+  ],
+  "cpu": "256",
+  "taskRoleArn": "arn:aws:iam::951731262205:role/ECSTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::951731262205:role/ECSTaskExecutionRole",
+  "networkMode": "bridge",
+  "family": "application-stack",
+  "memory": "512",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ]
+
+}

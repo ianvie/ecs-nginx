@@ -43,7 +43,7 @@
    "family": "ecs-encryption",
    "memory": "512",
    "networkMode": "awsvpc",
-   "requiresCompatibilities": [ 
+   "requiresCompatibilities": [
        "FARGATE" 
     ]
 
