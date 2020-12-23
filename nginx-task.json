@@ -15,7 +15,7 @@
           "protocol": "tcp"
         }
       ],
-      "image": "<NGINX reverse proxy image URL here>",
+      "image": "951731262205.dkr.ecr.eu-west-1.amazonaws.com/nginx:latest",
       "name": "nginx",
       "memory": "256",
       "cpu": "256",
@@ -33,7 +33,7 @@
           "awslogs-stream-prefix": "ecs"
         }
       },
-      "image": "<app image URL here>",
+      "image": "951731262205.dkr.ecr.eu-west-1.amazonaws.com/app:latest",
       "name": "app",
       "memory": "256",
       "cpu": "256",
